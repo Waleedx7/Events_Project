@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <h1>{{ event.name }}</h1>
-    <h1> {{event.description }}</h1>
-    <h1>{{event.location }}</h1>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <h1 class="name">{{ event.name }}</h1>
+    <h1 class="description"> {{event.description }}</h1>
+    <h1 class="location"> {{event.location }} </h1>
     <h1>{{event.date_time }}</h1>
     <p>Organiser: {{ event.organiser }}</p>
     <p>Number of seats: {{ event.seats }}</p>

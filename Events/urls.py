@@ -18,14 +18,14 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from event_page import views as event_views 
+from users import views as users_register
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('', event_views.event_list, name='event_list'),
     path ('<int:pk>/',event_views.event_detail, name='event_detail'),
     path('info/' ,event_views.info, name='info'),
-
-
-    
+    path('register/',users_register.user_register, name='register'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
