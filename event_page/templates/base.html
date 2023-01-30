@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'event_page/templates/static/style.css' %}">
+<html>
+  <head>
+    <title>My Events App</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="{% url 'event_list' %}">Home</a></li>
+        <li> <a href="{% url 'info' %}">contact us</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+      &copy; حقوق الطبع والنشر © 2022. جميع الحقوق محفوظة.
+    </div>
+  </body>
+</html>

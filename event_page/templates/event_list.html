@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    
+    <title>Document</title>
+</head>
+{% block content %}
+<body>
+    <h1>List of events</h1>
+    <ul>
+        {% for event in events %}
+            <li><a href="{% url 'event_detail' event.id %}">{{ event.name }}</a></li>
+            <img src="{{ event.image.url }}" alt="{{ event.name }}">
+        {% endfor %}
+    </ul>
+{% endblock %}
+</body>
+</html>
+   
